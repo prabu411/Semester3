@@ -1,0 +1,16 @@
+OOps Concepts:
+1)Class
+Vehicle(id,brandname,no of door)
+student(rollno,name,dept)
+Employee(id,name,dept)
+
+2)object
+3)Constructors
+4)Abstraction
+5)Encapsulation
+6)Inheritance
+7)Polymorphism
+8)Association
+9)Aggregation
+10)composition
+

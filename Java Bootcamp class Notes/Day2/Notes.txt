@@ -1,0 +1,7 @@
+AB : 2,10,19,21,27,33,39,58,
+
+Types of JAVA
+1) Java SE (Software Edition) -> System based application
+2) Java EE (Entriprise Edition) -> Webapplication
+3) JAVA ME (MIcro Edition / Mobile Edioti/ Minimalised Edition);
+4) JAVA FX (Cross Platform Application developer)

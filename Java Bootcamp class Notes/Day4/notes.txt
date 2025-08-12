@@ -1,0 +1,47 @@
+AB : 2,19,27,
+
+
+Autoboxing
+Unboxing
+
+int a = 10;
+
+Integer 
+1        2          4   8   
+byte -> short -> int-> long
+                float -> double
+
+Byte   Byte.parseByte() Byte.valueOf()
+Short  Short.parseShort() Short.valueOf()
+Integer Integer.parseInt() Integer.ValueOf()
+Long  Long.parseLong() Long.ValueOf();
+Float 
+Double
+
+String s= ""+b; b.toString();
+
+
+BigInteger 
+BigDecimal
+
+
+
+IO Classess
+1) Reader / Writer -> Character Based Inputs / Output
+2) InputStream / OutPutStram -> Byts Based Input / Output
+3) Console -> CMD Prompt
+
+
+DataReader / DataWriter
+DataInputStream / DataOutputStream
+FileReade / FileWriter
+FileInputStram / FileOutputStream
+
+BufferedReade / BufferedWriter
+InputStramReadr / OutputStreamWriter
+
+
+Utilpackage
+1) Scanner class
+
+

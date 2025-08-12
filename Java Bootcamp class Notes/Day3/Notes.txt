@@ -1,0 +1,40 @@
+AB : 2,19,21,26,27,39,58,
+
+Language Basics
+1) Keywords
+2) Variables
+3) Data Types 
+4) Wrapper Clasess
+
+
+Variables
+1) Instance Variable ->Object
+2) Class Varaible -> Static / Shared Memory
+3) Local Variable -> blocks
+4) Parameters
+char numbers , $,_
+char, $,_
+should not have any spaces
+getId
+getName
+getId
+MIN_VALUE
+MAX_VALUE
+
+_s1
+$
+
+class and Object
+Student s1 = new Student();
+int num1 = 10;
+
+Data Types : 
+0 - byte - Byte  -  1  byte  - 8 bit - -128 to 127 -2^7 to 2^7-1
+0 - short - Short - 2 bytes  - 16bit - -32768 to 32767 - -2^15 to 2^15 -1
+0 - int   - Integer - 4 bytes  - 32 bit - -2^31 to 2^31 -1
+0 - long -  Long - 8Bytes    - 64 bit - -2^63 to 2^63 -1
+0.0 -float - Float - 4bytes - 32bit
+0.0 - double - Double - 8bytes  -64 bit
+
+char - Character-> 2bytes ->unicode standard -> 2 bytes of Memory
+boolean -> Boolean - true /false

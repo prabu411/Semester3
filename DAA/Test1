@@ -1,0 +1,189 @@
+Notation of an Algorithm
+
+An algorithm is a finite sequence of well defined instructions
+to solve a problem or perform a computation.
+
+Properties:
+Finiteness
+Definiteness
+Input
+Output
+Effectiveness
+
+#include<iostream>
+using namespace std;
+int main(){
+    int n,sum=0;
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    sum+=i;
+    cout<<"Sum"<<sum;
+}
+
+Importance & Role of Algorithms in computing 
+
+Efficiency
+Scalability
+Reusability
+Foundation of Computing 
+
+Important Problem Types:
+
+Sorting
+Searching
+Graph Problem
+String Processing
+Optimization
+
+Analysis of Algorithm Efficiency:
+
+Time Complexity
+Space Complexity
+
+Time and Space Complexity:
+
+Time Complexity:Count the Number of basic operation
+Space Complexity:Memory for variable,Data Structure,recursion Stack.
+
+void printN(int n){
+    for(int i-0;i<n;i++)
+        cout<<i<<" ";
+}
+
+Asymptotic Notations:
+
+Describe Growth Rate of an Algorithms.
+
+O(g(n))-Upper bound(Worst Case)  o(n^2)
+Ω(g(n))	Lower bound (best case)	 Ω(𝑛)
+Θ(g(n))	Tight bound (average case) Θ(nlogn)
+
+Analysis FrameWork:
+
+A.Non-Recursive Algorithm Analysis:
+
+Find max in array:
+int maxElement(int arr[],int n){
+    int maxVal=arr[0];
+    for(int i=1;i<n;i++)
+        if(arr[i]>maxVal)
+        maxVel=arr[i];
+    return maxVal;
+}
+
+B.Recursive Algorithm Analysis
+
+int fact(int n){
+    if(n==0) return 1;
+    return n*fact(n-1);
+}
+
+String Algorithm
+
+A.Native Pattern Search
+
+check Pattern at every positio in text.
+
+Time:o(n-m+1).m
+
+#include<iostream>
+using namespace std;
+void nativesearch(string text,string pattern){
+    int n=text.size(),m=pattern.size();
+    for(int i=0;i<=n-m;i++){
+        int j;
+        for(j=0;j<m;j++)
+            if(text[i+j] != pattern[j]) break;
+            if(j==m)
+            cout<<"Pattern found at index"<<i<<"\n";
+    }
+}
+
+int main(){
+    nativeSearch("ABABAB","ABA");
+
+}
+
+
+B.Rabin-Karp Algorithm
+uses hashing for pattern matching.
+
+Time:Average 0(n+m)
+
+B.Rabin-Karp Algorithm:
+
+#include <bits/stdc++.h>
+using namespace std;
+
+#define d 256
+void rabinKarp(string text, string pattern, int q) {
+    int m = pattern.size(), n = text.size();
+    int p = 0, t = 0, h = 1;
+    for(int i = 0; i < m-1; i++)
+        h = (h*d) % q;
+
+    for(int i = 0; i < m; i++) {
+        p = (d*p + pattern[i]) % q;
+        t = (d*t + text[i]) % q;
+    }
+
+    for(int i = 0; i <= n-m; i++) {
+        if(p == t) {
+            int j;
+            for(j = 0; j < m; j++)
+                if(text[i+j] != pattern[j]) break;
+            if(j == m) cout << "Pattern found at index " << i << "\n";
+        }
+        if(i < n-m) {
+            t = (d*(t - text[i]*h) + text[i+m]) % q;
+            if(t < 0) t += q;
+        }
+    }
+}
+
+int main() {
+    rabinKarp("GEEKS FOR GEEKS", "GEEK", 101);
+}
+
+Knuth-Morris-Pratt (KMP) Algorithm
+Uses LPS (Longest Prefix Suffix) array to skip comparisons.
+Time: 𝑂(𝑛+𝑚)
+
+void computeLPS(string pat, vector<int> &lps) {
+    int len = 0;
+    lps[0] = 0;
+    int i = 1;
+    while(i < pat.size()) {
+        if(pat[i] == pat[len]) lps[i++] = ++len;
+        else if(len != 0) len = lps[len-1];
+        else lps[i++] = 0;
+    }
+}
+
+void KMPSearch(string text, string pat) {
+    int n = text.size(), m = pat.size();
+    vector<int> lps(m);
+    computeLPS(pat, lps);
+    int i = 0, j = 0;
+    while(i < n) {
+        if(pat[j] == text[i]) { i++; j++; }
+        if(j == m) {
+            cout << "Pattern found at index " << i-j << "\n";
+            j = lps[j-1];
+        } else if(i < n && pat[j] != text[i]) {
+            if(j != 0) j = lps[j-1];
+            else i++;
+        }
+    }
+}
+
+int main() {
+    KMPSearch("ABABDABACDABABCABAB", "ABABCABAB");
+}
+
+
+D. Manacher’s Algorithm (Longest Palindromic Substring)
+Finds longest palindrome in 𝑂(𝑛) time.
+Uses mirror property around a center.
+
+

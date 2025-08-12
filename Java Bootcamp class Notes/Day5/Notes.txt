@@ -1,0 +1,30 @@
+AB : 2,27,36,41
+
+2 3 10 39 
+
+
+Arrays Strings
+
+Arrays
+int arr[10];
+int * arr = (int *)malloc(sizeof(int));
+
+int [] arr = new int[size];
+float [] arr = new float[size];
+Student [] sarr = new Student[size];
+
+int [] arr = {1,2,3,4,5};
+
+Types : 
+1) 1D Arrays
+2) 2D Arrays -> int [][] mat = new int[row][cols];
+3) Multidimention Arrays
+3D array
+int [][][] arr = new int[no of 2D][rows][Cols];
+4D Array
+int  [][][][] arr = new int[no of 3D][no of 2D][row][cols];
+4) jagged Array
+int [][] mat = new int[4][];
+mat[0] = new int[5]
+mat[1] = new int[7]
+mat[2] = new int[8]
