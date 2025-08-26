@@ -1,0 +1,86 @@
+Application of AI(quick map)
+
+Vision: defect detection, medical imaging, autonomous driving.
+
+NLP: assistants,summarization,chat,translation.
+
+Planning & Robotics: Warehouse picking,drones,delivery,manipulation
+
+**Recommendation & personalization:**Retail,media,ads.
+
+Finance: fraud detection,risk scoring,algo trading.
+
+**HealthCare:**triage,diagnosis,scheduling.
+
+Games & Decesion-making: Search,reinforcement learning,statergy.
+
+Classification of AI systems W.r.t.Enveroiment:
+
+
+Environment differ along these axes(Russell-Norvig style) and the agent design follows:
+
+Observable: Fully vs. Partially observable (e.g., fog of war).
+
+Agents: Single-agent vs. Multi-agent (cooperative/competitive).
+
+Deterministic vs. Stochastic (action outcomes uncertain).
+
+Episodic vs. Sequential (current decision affects future).
+
+Static vs. Dynamic (changes during deliberation).
+
+Discrete vs. Continuous (states/time/actions).
+
+Known vs. Unknown (model of dynamics known?).
+
+Problem-Solving Agents & Search(Fomulation)
+
+State space (start, goal, actions, transition).
+Path cost (g), heuristic (h), evaluation (f).
+Solution: a sequence of actions from start to goal
+
+Core Graph Search Framework(reusable)
+
+from heapq import heappush,heapop
+from Collections import deque,defaultdict
+import math,random
+
+def reconstruct(parents,s,t):
+ 	path=[t]
+ 	while path[-1]!=s:
+ 		path.append(parents[path[-1]])
+ 	path.reverse()
+ 	return path
+
+3A)Uniformed (Blind) Search Strategies
+
+Breath-First Search:
+
+BFS(start, goal):
+    create a queue Q
+    enqueue start state
+    while Q is not empty:
+        node = dequeue(Q)
+        if node is goal → return solution
+        for each child of node:
+            enqueue(child)
+
+Heuristic Search Strategies:
+
+
+A*(Start,goal):
+ 	open={start}
+ 	g(start)=0
+ 	f(start)=h(start)
+ 	while open not empty:
+ 	node=node with lowest f
+ 	if node = goal -> return path
+ 	for each neighbor:
+ 		g(
+
+UNIT_2
+Logic Agent :
+
+A logic agent is an AI system that uses Knowledge representation + inference to make decisions.
+
+Example: A medical diagnosis agent knows rules like if p
